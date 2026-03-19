@@ -1,0 +1,18 @@
+# Python virtual environments
+openai-env/
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+test.py
+
+# Editor
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
