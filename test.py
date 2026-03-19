@@ -1,0 +1,2 @@
+def somma():
+    pass
