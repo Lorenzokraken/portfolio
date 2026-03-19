@@ -7,600 +7,324 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lorenzo Iuliano — Data Engineer</title>
 
-  <!-- favicon -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!-- custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    /* Skills badges */
-    .skills-section {
-      margin-top: 30px;
-    }
-    .skills-section h3 {
-      margin-bottom: 16px;
-    }
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .skill-badge {
-      background: var(--bg-gradient-jet);
-      border: 1px solid hsl(0, 0%, 22%);
-      color: var(--light-gray);
-      font-size: var(--fs-8);
-      font-weight: var(--fw-500);
-      padding: 5px 12px;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-    .skill-badge.highlight {
-      border-color: var(--vegas-gold);
-      color: var(--vegas-gold);
-    }
-
-    /* Social links in sidebar */
-    .social-list {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 16px 0 8px;
-    }
-    .social-item a {
-      color: var(--light-gray-70);
-      font-size: 18px;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: var(--fs-7);
-    }
-    .social-item a:hover {
-      color: var(--vegas-gold);
-    }
-    .social-item ion-icon {
-      font-size: 20px;
-    }
-
-    /* Resume timeline */
-    .timeline {
-      margin-top: 10px;
-    }
-    .timeline-item {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 24px;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--vegas-gold);
-    }
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: 3px;
-      top: 14px;
-      width: 2px;
-      height: calc(100% + 10px);
-      background: hsl(0, 0%, 22%);
-    }
-    .timeline-item:last-child::after {
-      display: none;
-    }
-    .timeline-date {
-      font-size: var(--fs-8);
-      color: var(--vegas-gold);
-      font-weight: var(--fw-500);
-      margin-bottom: 4px;
-    }
-    .timeline-title {
-      font-size: var(--fs-6);
-      font-weight: var(--fw-600);
-      color: var(--white-1);
-      margin-bottom: 2px;
-    }
-    .timeline-company {
-      font-size: var(--fs-7);
-      color: var(--light-gray-70);
-      margin-bottom: 6px;
-    }
-    .timeline-desc {
-      font-size: var(--fs-7);
-      color: var(--light-gray);
-      line-height: 1.6;
-    }
-    .resume-section {
-      margin-bottom: 32px;
-    }
-    .resume-section h3 {
-      margin-bottom: 20px;
-    }
-  </style>
-
-  <!-- main JS -->
   <script src="./assets/js/script.js" defer></script>
 </head>
 
+<body class="slide-mode">
 
-<body>
+  <!-- ===================== SLIDE CONTAINER ===================== -->
+  <div class="slides-container">
 
-  <main>
+    <!-- ===== SLIDE 1: HERO ===== -->
+    <section class="slide slide--hero" data-slide="0" data-state="active">
+      <div class="slide-inner">
 
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/FOTOCV.jpg" alt="Lorenzo Iuliano" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Lorenzo Iuliano">Lorenzo Iuliano</h1>
-          <p class="title">Data Engineer</p>
+        <div class="hero-avatar">
+          <img src="./assets/images/FOTOCV.jpg" alt="Lorenzo Iuliano">
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+        <div class="hero-text">
+          <p class="hero-label">Junior Data Engineer</p>
+          <h1 class="hero-name">Lorenzo Iuliano</h1>
+          <p class="hero-tagline">
+            Building enterprise data pipelines at scale —<br>
+            <span class="hero-tagline-sub">Databricks · AWS · PySpark · Terraform</span>
+          </p>
+        </div>
 
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-            <div class="icon-box">
+        <ul class="hero-social">
+          <li>
+            <a href="mailto:lorenzo.iulianokk@gmail.com" title="Email">
               <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:lorenzo.iulianokk@gmail.com" class="contact-link">lorenzo.iulianokk@gmail.com</a>
-            </div>
+            </a>
           </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+393883519425" class="contact-link">+39 388 3519425</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-              <time datetime="1997-11-11">November 11, 1997</time>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Rome, Italy</address>
-            </div>
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <!-- Social links -->
-        <ul class="social-list">
-          <li class="social-item">
+          <li>
             <a href="https://github.com/Lorenzokraken" target="_blank" rel="noopener noreferrer" title="GitHub">
               <ion-icon name="logo-github"></ion-icon>
-              GitHub
             </a>
           </li>
-          <li class="social-item">
+          <li>
             <a href="https://www.linkedin.com/in/lorenzo-iuliano/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
               <ion-icon name="logo-linkedin"></ion-icon>
-              LinkedIn
             </a>
           </li>
+          <li>
+            <a href="tel:+393883519425" title="Phone">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+        <div class="hero-location">
+          <ion-icon name="location-outline"></ion-icon>
+          Rome, Italy
+        </div>
+
+        <div class="hero-scroll-hint">
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 2: ABOUT ===== -->
+    <section class="slide slide--about" data-slide="1" data-state="next">
+      <div class="slide-inner">
+
+        <h2 class="slide-title">About Me</h2>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <p>
+              I'm a Junior Data Engineer with hands-on enterprise experience on the <strong>SIAE project</strong> (BIT/Storm Reply, 2025–2026), processing <strong>100M+ records</strong> using Databricks, PySpark, Delta Lake, and AWS. Infrastructure managed with Terraform/Terragrunt, deployed via GitHub Actions CI/CD.
+            </p>
+            <p>
+              Before data engineering, I worked as a <strong>dubbing sound engineer</strong> for Amazon, Netflix, Sky, and Disney+. That background shaped my eye for detail and quality in production workflows.
+            </p>
+          </div>
+
+          <div class="stack-card">
+            <h3 class="stack-card-title">Tech Stack</h3>
+            <div class="skills-grid">
+              <span class="skill-badge highlight">Databricks</span>
+              <span class="skill-badge highlight">PySpark</span>
+              <span class="skill-badge highlight">Delta Lake</span>
+              <span class="skill-badge highlight">AWS</span>
+              <span class="skill-badge highlight">Terraform</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">S3</span>
+              <span class="skill-badge">AWS Glue</span>
+              <span class="skill-badge">Athena</span>
+              <span class="skill-badge">Lambda</span>
+              <span class="skill-badge">DynamoDB</span>
+              <span class="skill-badge">OpenSearch</span>
+              <span class="skill-badge">Terragrunt</span>
+              <span class="skill-badge">GitHub Actions</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">Power BI</span>
+              <span class="skill-badge">Plotly</span>
+              <span class="skill-badge">Flask</span>
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">GraphQL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 3: WHAT I DO ===== -->
+    <section class="slide slide--services" data-slide="2" data-state="next">
+      <div class="slide-inner">
+
+        <h2 class="slide-title">What I Do</h2>
+
+        <ul class="services-grid">
+
+          <li class="svc-card">
+            <div class="svc-icon">
+              <img src="./assets/images/icon-design.svg" alt="" width="36">
+            </div>
+            <div>
+              <h3 class="svc-title">Data Engineering</h3>
+              <p class="svc-text">Building ETL pipelines with Medallion architecture, PySpark, Delta Lake, and Databricks to process big data at scale.</p>
+            </div>
+          </li>
+
+          <li class="svc-card">
+            <div class="svc-icon">
+              <img src="./assets/images/icon-dev.svg" alt="" width="36">
+            </div>
+            <div>
+              <h3 class="svc-title">Cloud Infrastructure</h3>
+              <p class="svc-text">Provisioning and managing AWS infrastructure (S3, Glue, Athena, Lambda, DynamoDB) with Terraform/Terragrunt and CI/CD.</p>
+            </div>
+          </li>
+
+          <li class="svc-card">
+            <div class="svc-icon">
+              <img src="./assets/images/icon-app.svg" alt="" width="36">
+            </div>
+            <div>
+              <h3 class="svc-title">Backend Development</h3>
+              <p class="svc-text">Developing Python scripts, REST APIs, and automation workflows to integrate data systems and streamline processes.</p>
+            </div>
+          </li>
+
+          <li class="svc-card">
+            <div class="svc-icon">
+              <img src="./assets/images/icon-photo.svg" alt="" width="36">
+            </div>
+            <div>
+              <h3 class="svc-title">Dashboarding</h3>
+              <p class="svc-text">Delivering insights through Power BI, Plotly, and interactive visualizations built on real data pipelines.</p>
+            </div>
+          </li>
+
         </ul>
 
       </div>
+    </section>
 
-    </aside>
+    <!-- ===== SLIDE 4: RESUME ===== -->
+    <section class="slide slide--resume" data-slide="3" data-state="next">
+      <div class="slide-inner slide-inner--resume">
 
+        <h2 class="slide-title">Resume</h2>
 
-    <!--
-      - #main-content
-    -->
+        <div class="resume-cols">
 
-    <div class="main-content">
+          <div class="resume-col">
+            <h3 class="resume-col-title">
+              <ion-icon name="briefcase-outline"></ion-icon>
+              Experience
+            </h3>
 
-      <!--
-        - #NAVBAR
-      -->
+            <div class="r-item">
+              <span class="r-date">2025 — Present</span>
+              <h4 class="r-role">Junior Data Engineer</h4>
+              <p class="r-company">BIT / Storm Reply — SIAE Project</p>
+              <p class="r-desc">Enterprise pipelines on 100M+ records. Databricks, PySpark, Delta Lake, AWS (S3, Glue, Athena, DynamoDB, OpenSearch, Lambda), Terraform/Terragrunt, GitHub Actions. Medallion architecture, data quality, CI/CD automation.</p>
+            </div>
 
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-        </ul>
-      </nav>
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I'm a Junior Data Engineer with hands-on enterprise experience on the SIAE project (BIT/Storm Reply, 2025–2026), where I work on big data pipelines handling 100M+ records using Databricks, PySpark, Delta Lake, and AWS (S3, Glue, Athena, DynamoDB, OpenSearch, Lambda). Infrastructure is managed with Terraform/Terragrunt and deployed via GitHub Actions CI/CD.
-          </p>
-          <p>
-            Before moving into data engineering, I worked as a dubbing sound engineer for Amazon, Netflix, Sky, and Disney+. That background sharpened my attention to detail and gave me a strong foundation in structured, high-quality production workflows — skills I now apply to data architecture and pipeline design.
-          </p>
-        </section>
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Engineering</h4>
-                <p class="service-item-text">
-                  Building ETL pipelines with Medallion architecture, PySpark, Delta Lake, and Databricks to process big data at scale.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Cloud Infrastructure</h4>
-                <p class="service-item-text">
-                  Provisioning and managing AWS infrastructure (S3, Glue, Athena, Lambda, DynamoDB) with Terraform/Terragrunt and GitHub Actions CI/CD.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Backend Development</h4>
-                <p class="service-item-text">
-                  Developing Python scripts, REST APIs, and automation workflows to integrate data systems and streamline processes.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Dashboarding</h4>
-                <p class="service-item-text">
-                  Delivering insights through Power BI, Plotly, and interactive visualizations built on real data pipelines.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-        <!--
-          - skills
-        -->
-
-        <section class="skills-section">
-          <h3 class="h3 service-title">Tech Stack</h3>
-          <div class="skills-grid">
-            <span class="skill-badge highlight">Databricks</span>
-            <span class="skill-badge highlight">PySpark</span>
-            <span class="skill-badge highlight">Delta Lake</span>
-            <span class="skill-badge highlight">AWS</span>
-            <span class="skill-badge highlight">Terraform</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">S3</span>
-            <span class="skill-badge">AWS Glue</span>
-            <span class="skill-badge">Athena</span>
-            <span class="skill-badge">Lambda</span>
-            <span class="skill-badge">DynamoDB</span>
-            <span class="skill-badge">OpenSearch</span>
-            <span class="skill-badge">Terragrunt</span>
-            <span class="skill-badge">GitHub Actions</span>
-            <span class="skill-badge">PostgreSQL</span>
-            <span class="skill-badge">Power BI</span>
-            <span class="skill-badge">Plotly</span>
-            <span class="skill-badge">Flask</span>
-            <span class="skill-badge">TypeScript</span>
-            <span class="skill-badge">GraphQL</span>
+            <div class="r-item">
+              <span class="r-date">2018 — 2024</span>
+              <h4 class="r-role">Dubbing Sound Engineer</h4>
+              <p class="r-company">Freelance, Rome</p>
+              <p class="r-desc">Audio post-production for Amazon Prime Video, Netflix, Sky, Disney+. Multi-track sessions with strict quality and deadline standards.</p>
+            </div>
           </div>
-        </section>
 
-        <!--
-          - education
-        -->
+          <div class="resume-col">
+            <h3 class="resume-col-title">
+              <ion-icon name="school-outline"></ion-icon>
+              Education
+            </h3>
 
-        <section class="clients">
-          <h3 class="h3 clients-title">Education</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="https://italy.generation.org/" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/generation_trimmed.png"
-                    alt="Generation Italy logo"
-                    style="max-height: 150px; object-fit: contain;">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://dataweave.it/" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/dataweave_trimmed.png"
-                    alt="DataWeave logo"
-                    style="max-height: 150px; object-fit: contain;">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.slmc.it/" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/SAINTLOUIS.png"
-                    alt="Saint Louis Music College logo"
-                    style="max-height: 150px; object-fit: contain;">
-              </a>
-            </li>
-
-          </ul>
-        </section>
-
-      </article>
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="resume-section">
-          <h3 class="h3 service-title">Experience</h3>
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <p class="timeline-date">2025 — Present</p>
-              <h4 class="timeline-title">Junior Data Engineer</h4>
-              <p class="timeline-company">BIT / Storm Reply — SIAE Project, Rome</p>
-              <p class="timeline-desc">
-                Working on enterprise-grade data pipelines for SIAE (Italian Authors and Publishers Society), processing 100M+ records.
-                Stack: Databricks, PySpark, Delta Lake, AWS (S3, Glue, Athena, DynamoDB, OpenSearch, Lambda),
-                Terraform/Terragrunt, GitHub Actions. Involved in Medallion architecture design, data quality checks,
-                and CI/CD pipeline automation.
-              </p>
+            <div class="r-item">
+              <span class="r-date">2024</span>
+              <h4 class="r-role">Junior Data Engineer Bootcamp</h4>
+              <p class="r-company">Generation Italy</p>
+              <p class="r-desc">Python, SQL, data engineering fundamentals and professional skills.</p>
             </div>
 
-            <div class="timeline-item">
-              <p class="timeline-date">2018 — 2024</p>
-              <h4 class="timeline-title">Dubbing Sound Engineer</h4>
-              <p class="timeline-company">Freelance — Rome</p>
-              <p class="timeline-desc">
-                Audio post-production for major streaming platforms: Amazon Prime Video, Netflix, Sky, Disney+.
-                Managed complex multi-track sessions with strict quality and deadline standards —
-                skills now applied to data pipeline reliability and production-grade engineering.
-              </p>
+            <div class="r-item">
+              <span class="r-date">2024</span>
+              <h4 class="r-role">Data Engineering Program</h4>
+              <p class="r-company">Dataweave Academy</p>
+              <p class="r-desc">Cloud infrastructure, ETL pipelines, and big data tools.</p>
             </div>
 
+            <div class="r-item">
+              <span class="r-date">2016 — 2019</span>
+              <h4 class="r-role">Sound Engineering & Music Production</h4>
+              <p class="r-company">Saint Louis College of Music, Rome</p>
+              <p class="r-desc">Audio production, mixing, studio management.</p>
+            </div>
           </div>
-        </section>
 
-        <section class="resume-section">
-          <h3 class="h3 service-title">Education & Training</h3>
-          <div class="timeline">
+        </div>
 
-            <div class="timeline-item">
-              <p class="timeline-date">2024</p>
-              <h4 class="timeline-title">Junior Data Engineer Bootcamp</h4>
-              <p class="timeline-company">Generation Italy</p>
-              <p class="timeline-desc">
-                Intensive training on Python, SQL, data engineering fundamentals, and professional skills.
-              </p>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 5: PORTFOLIO + CONTACT ===== -->
+    <section class="slide slide--contact" data-slide="4" data-state="next">
+      <div class="slide-inner slide-inner--contact">
+
+        <h2 class="slide-title">Projects & Contact</h2>
+
+        <div class="pc-grid">
+
+          <!-- Projects -->
+          <div class="projects-col">
+            <h3 class="pc-col-title">Portfolio</h3>
+            <div class="proj-cards">
+
+              <a class="proj-card" href="https://github.com/Lorenzokraken/CO2-Emissions" target="_blank" rel="noopener noreferrer">
+                <div class="proj-img-wrap">
+                  <img src="./assets/images/AI Prevision.png" alt="CO2 Emissions">
+                  <div class="proj-overlay"><ion-icon name="logo-github"></ion-icon></div>
+                </div>
+                <div class="proj-info">
+                  <h4 class="proj-title">CO2 Emissions</h4>
+                  <p class="proj-tags">ETL · Flask · Plotly · Prophet</p>
+                </div>
+              </a>
+
+              <a class="proj-card" href="https://github.com/Lorenzokraken/SQL-Chatbox" target="_blank" rel="noopener noreferrer">
+                <div class="proj-img-wrap">
+                  <img src="./assets/images/sqlchatbox.jpeg" alt="SQL Chatbox">
+                  <div class="proj-overlay"><ion-icon name="logo-github"></ion-icon></div>
+                </div>
+                <div class="proj-info">
+                  <h4 class="proj-title">SQL Chatbox</h4>
+                  <p class="proj-tags">AI · SQL · Schema Inference</p>
+                </div>
+              </a>
+
             </div>
-
-            <div class="timeline-item">
-              <p class="timeline-date">2024</p>
-              <h4 class="timeline-title">Data Engineering Program</h4>
-              <p class="timeline-company">Dataweave Academy</p>
-              <p class="timeline-desc">
-                Advanced data engineering curriculum covering cloud infrastructure, ETL pipelines, and big data tools.
-              </p>
-            </div>
-
-            <div class="timeline-item">
-              <p class="timeline-date">2016 — 2019</p>
-              <h4 class="timeline-title">Sound Engineering & Music Production</h4>
-              <p class="timeline-company">Saint Louis College of Music, Rome</p>
-              <p class="timeline-desc">
-                Degree in sound engineering with focus on audio production, mixing, and studio management.
-              </p>
-            </div>
-
           </div>
-        </section>
 
-      </article>
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="project-list">
-
-            <li class="project-item active" data-filter-item data-category="data engineering">
-              <a href="https://github.com/Lorenzokraken/CO2-Emissions" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/AI Prevision.png" alt="CO2 Emissions project" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">CO2 Emissions</h3>
-                <p class="project-category">ETL · Flask · Plotly · Prophet</p>
-
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="data engineering">
-              <a href="https://github.com/Lorenzokraken/SQL-Chatbox" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/sqlchatbox.jpeg" alt="SQL Chatbox project" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">SQL Chatbox</h3>
-                <p class="project-category">AI · SQL · Schema Inference</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190747.36713395674!2d12.349770924038905!3d41.89660138386235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy!5e0!3m2!1sen!2sit!4v1710000000000!5m2!1sen!2sit"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="https://formspree.io/f/xpwzgkqr" method="POST" class="form" data-form>
-
-            <div class="input-wrapper">
+          <!-- Contact -->
+          <div class="contact-col">
+            <h3 class="pc-col-title">Get in Touch</h3>
+            <form action="https://formspree.io/f/xzdjovoz" method="POST" class="slide-form" data-form>
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+              <textarea name="message" class="form-input" placeholder="Your message" required data-form-input></textarea>
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+        </div>
 
-            <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+      </div>
+    </section>
 
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
-  </main>
+  </div>
+  <!-- /.slides-container -->
 
 
-  <!--
-    - custom js link
-  -->
+  <!-- ===== SLIDE NAVIGATOR (dots) ===== -->
+  <nav class="slide-nav" aria-label="Slide navigation">
+    <button class="dot active" data-dot="0" aria-label="Hero"></button>
+    <button class="dot" data-dot="1" aria-label="About"></button>
+    <button class="dot" data-dot="2" aria-label="Services"></button>
+    <button class="dot" data-dot="3" aria-label="Resume"></button>
+    <button class="dot" data-dot="4" aria-label="Contact"></button>
+  </nav>
+
+  <!-- ===== SLIDE ARROWS ===== -->
+  <button class="slide-arrow slide-arrow--prev" aria-label="Previous slide">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
+  <button class="slide-arrow slide-arrow--next" aria-label="Next slide">
+    <ion-icon name="chevron-down-outline"></ion-icon>
+  </button>
+
+  <!-- ===== SLIDE LABELS (desktop) ===== -->
+  <div class="slide-labels">
+    <span data-label="0" class="slide-label active">Intro</span>
+    <span data-label="1" class="slide-label">About</span>
+    <span data-label="2" class="slide-label">Services</span>
+    <span data-label="3" class="slide-label">Resume</span>
+    <span data-label="4" class="slide-label">Contact</span>
+  </div>
+
+
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>

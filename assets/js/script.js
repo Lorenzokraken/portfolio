@@ -95,18 +95,98 @@ formInputs.forEach(input => {
   });
 });
 
-// PAGE NAVIGATION
+// PAGE NAVIGATION (legacy - kept for compatibility)
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
 navigationLinks.forEach((link, index) => {
   link.addEventListener("click", function () {
-    const pageName = this.innerText.toLowerCase(); // es: "portfolio"
+    const pageName = this.innerText.toLowerCase();
     pages.forEach((page, i) => {
       const match = page.dataset.page === pageName;
       page.classList.toggle("active", match);
-      navigationLinks[i].classList.toggle("active", match);
+      navigationLinks[i]?.classList.toggle("active", match);
     });
     window.scrollTo(0, 0);
   });
 });
+
+// =============================================
+// SLIDE NAVIGATION
+// =============================================
+(function () {
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  const labels = document.querySelectorAll(".slide-label");
+  const prevBtn = document.querySelector(".slide-arrow--prev");
+  const nextBtn = document.querySelector(".slide-arrow--next");
+
+  if (!slides.length) return;
+
+  let current = 0;
+  let isAnimating = false;
+  const ANIM_DURATION = 680; // ms — matches CSS transition
+
+  function goTo(n) {
+    if (isAnimating || n === current || n < 0 || n >= slides.length) return;
+    isAnimating = true;
+
+    slides.forEach((slide, i) => {
+      if (i < n)       slide.dataset.state = "prev";
+      else if (i === n) slide.dataset.state = "active";
+      else             slide.dataset.state = "next";
+    });
+
+    dots.forEach((d, i) => d.classList.toggle("active", i === n));
+    labels.forEach((l, i) => l.classList.toggle("active", i === n));
+
+    // Update arrow visibility
+    if (prevBtn) prevBtn.classList.toggle("hidden", n === 0);
+    if (nextBtn) nextBtn.classList.toggle("hidden", n === slides.length - 1);
+
+    current = n;
+    setTimeout(() => { isAnimating = false; }, ANIM_DURATION);
+  }
+
+  // Init
+  goTo(0);
+
+  // Dot clicks
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => goTo(+dot.dataset.dot));
+  });
+
+  // Arrow clicks
+  prevBtn?.addEventListener("click", () => goTo(current - 1));
+  nextBtn?.addEventListener("click", () => goTo(current + 1));
+
+  // Keyboard
+  document.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown" || e.key === "PageDown") { e.preventDefault(); goTo(current + 1); }
+    if (e.key === "ArrowUp"   || e.key === "PageUp")   { e.preventDefault(); goTo(current - 1); }
+  });
+
+  // Mouse wheel (debounced)
+  let wheelTimer = null;
+  document.addEventListener("wheel", e => {
+    e.preventDefault();
+    if (wheelTimer) return;
+    wheelTimer = setTimeout(() => { wheelTimer = null; }, 900);
+    if (e.deltaY > 0) goTo(current + 1);
+    else              goTo(current - 1);
+  }, { passive: false });
+
+  // Touch swipe
+  let touchStartY = 0;
+  document.addEventListener("touchstart", e => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener("touchend", e => {
+    const delta = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(delta) < 50) return;
+    if (delta > 0) goTo(current + 1);
+    else           goTo(current - 1);
+  }, { passive: true });
+
+})();
